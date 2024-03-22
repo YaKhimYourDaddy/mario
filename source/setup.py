@@ -12,3 +12,4 @@ SCREEN = pg.display.set_mode(c.SCREEN_SIZE)
 SCREEN_RECT = SCREEN.get_rect()
 
 GFX = tools.load_all_gfx(os.path.join("resources","graphics"))
+SFX = tools.load_all_sfx(os.path.join("resources", "sounds"))

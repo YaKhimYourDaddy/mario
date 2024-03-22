@@ -101,3 +101,13 @@ def load_all_gfx(directory, colorkey=(255,0,255), accept=('.png', '.jpg', '.bmp'
                 img.set_colorkey(colorkey)
             graphics[name] = img
     return graphics
+
+def load_all_sfx(directory, accept=('ogg', 'wav')):
+    sounds = {}
+    for sound_file in os.listdir(directory):
+        name, ext = os.path.splitext(sound_file)
+        if ext.lower() in accept:
+            sound_path = os.path.join(directory, sound_file)
+            sound = pg.mixer.Sound(sound_path)
+            sounds[name] = sound
+    return sounds
